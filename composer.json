@@ -1,5 +1,7 @@
 {
     "name": "hexlet/code",
+    "license": "MIT",
+    "description": "hexlet php-project-lvl1 package",
     "authors": [
         {
             "name": "kemallt",
