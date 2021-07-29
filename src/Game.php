@@ -27,7 +27,7 @@ class Game
         $task = 'Answer "yes" if the number is even, otherwise answer "no".';
         $count = 0;
         line($task);
-        for ($i=0; $i < 3; $i++) {
+        for ($i = 0; $i < 3; $i++) {
             $number = rand();
             $isEven = ($number % 2) === 0 ? 'yes' : 'no';
             $answer = prompt("Question: {$number}");
