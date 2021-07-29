@@ -2,7 +2,7 @@
 
 namespace Brain\Games\Even;
 
-function getPars($minNumber = 1, $maxNumber = 100)
+function getPars(int $minNumber = 1, int $maxNumber = 100): array
 {
     $task = 'Answer "yes" if the number is even, otherwise answer "no".';
     $number = rand($minNumber, $maxNumber);

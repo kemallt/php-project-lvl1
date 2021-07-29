@@ -2,10 +2,8 @@
 
 namespace Brain\Games\Gcd;
 
-function getPars()
+function getPars(int $minNumber = 1, int $maxNumber = 100): array
 {
-    $minNumber = 1;
-    $maxNumber = 100;
     $task = 'Find the greatest common divisor of given numbers.';
     $number1 = rand($minNumber, $maxNumber);
     $number2 = rand($minNumber, $maxNumber);
@@ -14,7 +12,7 @@ function getPars()
     return array('questionString' => $questionString, 'rightAnswer' => $rightAnswer, 'task' => $task);
 }
 
-function getGCD($number1, $number2)
+function getGCD(int $number1, int $number2): int
 {
     $delimeters = [];
     for ($i = 1; $i <= $number1; $i++) {

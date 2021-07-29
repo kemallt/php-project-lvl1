@@ -2,7 +2,7 @@
 
 namespace Brain\Games\Calc;
 
-function getPars($minNumber = 1, $maxNumber = 100)
+function getPars(int $minNumber = 1, int $maxNumber = 100): array
 {
     $task = 'What is the result of the expression?';
     $operations = ['+', '-', '*'];

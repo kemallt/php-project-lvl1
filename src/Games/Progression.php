@@ -2,7 +2,7 @@
 
 namespace Brain\Games\Progression;
 
-function getPars($minNumber = 1, $maxNumber = 100)
+function getPars(int $minNumber = 1, int $maxNumber = 100): array
 {
     $minRange = 5;
     $maxRange = 15;
