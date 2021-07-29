@@ -13,7 +13,9 @@ class Engine
     public function __construct()
     {
         $this->tasks = array('even' => 'Answer "yes" if the number is even, otherwise answer "no".',
-                            'calc' => 'What is the result of the expression?');
+                            'calc' => 'What is the result of the expression?',
+                            'gcd' => 'Find the greatest common divisor of given numbers.',
+                            'progression' => 'What number is missing in the progression?');
     }
 
     public function start($type)
@@ -35,12 +37,15 @@ class Engine
         line($task);
         for ($i = 0; $i < 3; $i++) {
             if ($type === 'even') {
-                ['questionString' => $questionString, 'rightAnswer' => $rightAnswer] = $this->getEvenPars();
+                $pars = $this->getEvenPars();
             } elseif ($type === 'calc') {
-                ['questionString' => $questionString, 'rightAnswer' => $rightAnswer] = $this->getCalcPars();
+                $pars = $this->getCalcPars();
             } elseif ($type === 'gcd') {
-                ['questionString' => $questionString, 'rightAnswer' => $rightAnswer] = $this->getGCDPars();
+                $pars = $this->getGCDPars();
+            } elseif ($type === 'progression') {
+                $pars = $this->getProgressionPars();
             }
+            ['questionString' => $questionString, 'rightAnswer' => $rightAnswer] = $pars;
             $answer = prompt("Question: {$questionString}");
             if ($answer == $rightAnswer) {
                 line("Correct!");
@@ -51,6 +56,28 @@ class Engine
             }
         }
         line("Congratulations, %s!", $this->name);
+    }
+
+    public function getProgressionPars()
+    {
+        $numbersCount = rand(5, 15);
+        $progressionStart = rand(1, 100);
+        $progressionAdd = rand(1, 10);
+        $progressionArr = [];
+        $hiddenPosition = rand(0, $numbersCount);
+        $questionString = "";
+        for ($i = 0; $i < $numbersCount; $i++) {
+            $curNumber = $progressionStart + $progressionAdd;
+            $progressionArr[] = $curNumber;
+            $progressionStart = $curNumber;
+            if ($i === $hiddenPosition) {
+                $questionString .= ".. ";
+                $rightAnswer = $curNumber;
+            } else {
+                $questionString .= "{$curNumber} ";
+            }
+        }
+        return array('questionString' => trim($questionString), 'rightAnswer' => $rightAnswer);
     }
 
     public function getGCD($number1, $number2)
