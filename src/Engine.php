@@ -36,8 +36,10 @@ class Engine
         for ($i = 0; $i < 3; $i++) {
             if ($type === 'even') {
                 ['questionString' => $questionString, 'rightAnswer' => $rightAnswer] = $this->getEvenPars();
-            } else {
+            } elseif ($type === 'calc') {
                 ['questionString' => $questionString, 'rightAnswer' => $rightAnswer] = $this->getCalcPars();
+            } elseif ($type === 'gcd') {
+                ['questionString' => $questionString, 'rightAnswer' => $rightAnswer] = $this->getGCDPars();
             }
             $answer = prompt("Question: {$questionString}");
             if ($answer == $rightAnswer) {
@@ -49,6 +51,31 @@ class Engine
             }
         }
         line("Congratulations, %s!", $this->name);
+    }
+
+    public function getGCD($number1, $number2)
+    {
+        $delimeters = [];
+        for ($i = 1; $i <= $number1; $i++) {
+            if ($number1 % $i === 0) {
+                $delimeters[] = $i;
+            }
+        }
+        print_r($delimeters);
+        for ($i = count($delimeters) - 1; $i >= 0; $i--) {
+            if ($number2 % $delimeters[$i] === 0) {
+                return $delimeters[$i];
+            }
+        }
+    }
+
+    public function getGCDPars()
+    {
+        $number1 = rand(1, 100);
+        $number2 = rand(1, 100);
+        $questionString = "{$number1} {$number2}";
+        $rightAnswer = $this->getGCD($number1, $number2);
+        return array('questionString' => $questionString, 'rightAnswer' => $rightAnswer);
     }
 
     public function getEvenPars()
