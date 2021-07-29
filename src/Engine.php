@@ -32,6 +32,8 @@ function game(string $type, string $name): void
             $pars = \Brain\Games\Progression\getPars();
         } elseif ($type === 'prime') {
             $pars = \Brain\Games\Prime\getPars();
+        } else {
+            $pars = array('questionString' => '', 'rightAnswer' => '', 'task' => '');
         }
         ['questionString' => $questionString, 'rightAnswer' => $rightAnswer, 'task' => $task] = $pars;
         line($task);

@@ -25,4 +25,5 @@ function getGCD(int $number1, int $number2): int
             return $delimeters[$i];
         }
     }
+    return 1;
 }

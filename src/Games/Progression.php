@@ -24,6 +24,7 @@ function getPars(int $minNumber = 1, int $maxNumber = 100): array
             $rightAnswer = $curNumber;
         } else {
             $questionString .= "{$curNumber} ";
+            $rightAnswer = null;
         }
     }
     return array('questionString' => trim($questionString), 'rightAnswer' => $rightAnswer, 'task' => $task);
