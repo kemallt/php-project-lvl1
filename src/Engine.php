@@ -64,7 +64,7 @@ class Engine
         $progressionStart = rand(1, 100);
         $progressionAdd = rand(1, 10);
         $progressionArr = [];
-        $hiddenPosition = rand(0, $numbersCount);
+        $hiddenPosition = rand(0, $numbersCount - 1);
         $questionString = "";
         for ($i = 0; $i < $numbersCount; $i++) {
             $curNumber = $progressionStart + $progressionAdd;
