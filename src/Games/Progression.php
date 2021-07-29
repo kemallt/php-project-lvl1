@@ -15,6 +15,7 @@ function getPars(int $minNumber = 1, int $maxNumber = 100): array
     $progressionArr = [];
     $hiddenPosition = rand(0, $numbersCount - 1);
     $questionString = "";
+    $rightAnswer = null;
     for ($i = 0; $i < $numbersCount; $i++) {
         $curNumber = $progressionStart + $progressionAdd;
         $progressionArr[] = $curNumber;
@@ -24,7 +25,6 @@ function getPars(int $minNumber = 1, int $maxNumber = 100): array
             $rightAnswer = $curNumber;
         } else {
             $questionString .= "{$curNumber} ";
-            $rightAnswer = null;
         }
     }
     return array('questionString' => trim($questionString), 'rightAnswer' => $rightAnswer, 'task' => $task);
