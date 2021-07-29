@@ -4,4 +4,5 @@
 <a href="https://asciinema.org/a/aOT6r2XyMAxjg6lFPJdL9yRrK">Asciinema even</a>
 <a href="https://asciinema.org/a/xW0Ran4ubu34eoKK0Zo17c6ch">Asciinema calc</a>
 <a href=" https://asciinema.org/a/02zNt6OWpgrZWUWuoIj1mzIz0">Asciinema gcd</a>
-<a href="https://asciinema.org/a/k71AiNV9Oa1kV82lBwOoIlejQ">Asciinema progression
+<a href="https://asciinema.org/a/k71AiNV9Oa1kV82lBwOoIlejQ">Asciinema progression</a>
+<a href="https://asciinema.org/a/mBlx2v0aZU6WwNxQTeRHlvJPR">Asciinemf prime</a>

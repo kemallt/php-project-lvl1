@@ -15,7 +15,8 @@ class Engine
         $this->tasks = array('even' => 'Answer "yes" if the number is even, otherwise answer "no".',
                             'calc' => 'What is the result of the expression?',
                             'gcd' => 'Find the greatest common divisor of given numbers.',
-                            'progression' => 'What number is missing in the progression?');
+                            'progression' => 'What number is missing in the progression?',
+                            'prime' => 'Answer "yes" if given number is prime. Otherwise answer "no".');
     }
 
     public function start($type)
@@ -44,6 +45,8 @@ class Engine
                 $pars = $this->getGCDPars();
             } elseif ($type === 'progression') {
                 $pars = $this->getProgressionPars();
+            } elseif ($type === 'prime') {
+                $pars = $this->getPrimePars();
             }
             ['questionString' => $questionString, 'rightAnswer' => $rightAnswer] = $pars;
             $answer = prompt("Question: {$questionString}");
@@ -56,6 +59,19 @@ class Engine
             }
         }
         line("Congratulations, %s!", $this->name);
+    }
+
+    public function getPrimePars()
+    {
+        $number = rand(1, 100);
+        $rightAnswer = 'yes';
+        for ($i = 2; $i < $number; $i++) {
+            if ($number % $i === 0) {
+                $rightAnswer = 'no';
+                break;
+            }
+        }
+        return array('questionString' => $number, 'rightAnswer' => $rightAnswer);
     }
 
     public function getProgressionPars()
@@ -108,8 +124,7 @@ class Engine
     {
         $number = rand(1, 100);
         $rightAnswer = ($number % 2) === 0 ? 'yes' : 'no';
-        $questionString = $number;
-        return array('questionString' => $questionString, 'rightAnswer' => $rightAnswer);
+        return array('questionString' => $number, 'rightAnswer' => $rightAnswer);
     }
 
     public function getCalcPars()

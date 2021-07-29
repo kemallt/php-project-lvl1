@@ -12,3 +12,5 @@ brain-gcd:
 	php bin/brain-gcd.php
 brain-progression:
 	php bin/brain-progression.php
+brain-prime:
+	php bin/brain-prime.php
