@@ -10,11 +10,9 @@
     ],
     "autoload": {
         "files": [
-            "src/Cli.php"
-        ],
-        "psr-4": {
-            "Brain\\Games\\": "src"
-        }
+            "src/Cli.php",
+            "src/Engine.php"
+        ]
     },
     "bin": [
         "bin/brain-games",
