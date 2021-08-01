@@ -4,12 +4,11 @@
 
 Choose even or not - make brain-even
 [![asciicast](https://asciinema.org/a/aOT6r2XyMAxjg6lFPJdL9yRrK.svg)](https://asciinema.org/a/aOT6r2XyMAxjg6lFPJdL9yRrK)
-<a href="https://asciinema.org/a/aOT6r2XyMAxjg6lFPJdL9yRrK">Asciinema even</a>
 Calculate operation - make brain-calc
-<a href="https://asciinema.org/a/xW0Ran4ubu34eoKK0Zo17c6ch">Asciinema calc</a>
+[![asciicast](https://asciinema.org/a/xW0Ran4ubu34eoKK0Zo17c6ch.svg)](https://asciinema.org/a/xW0Ran4ubu34eoKK0Zo17c6ch)
 Get greatest common delimeter - make brain-gcd
-<a href=" https://asciinema.org/a/02zNt6OWpgrZWUWuoIj1mzIz0">Asciinema gcd</a>
+[![asciicast](https://asciinema.org/a/02zNt6OWpgrZWUWuoIj1mzIz0.svg)](https://asciinema.org/a/02zNt6OWpgrZWUWuoIj1mzIz0)
 Guess hidden number in progression - make brain-progression
-<a href="https://asciinema.org/a/k71AiNV9Oa1kV82lBwOoIlejQ">Asciinema progression</a>
+[![asciicast](https://asciinema.org/a/k71AiNV9Oa1kV82lBwOoIlejQ.svg)](https://asciinema.org/a/k71AiNV9Oa1kV82lBwOoIlejQ)
 Choose prime or not - make brain-prime
-<a href="https://asciinema.org/a/mBlx2v0aZU6WwNxQTeRHlvJPR">Asciinemf prime</a>
+[![asciicast](https://asciinema.org/a/mBlx2v0aZU6WwNxQTeRHlvJPR.svg)](https://asciinema.org/a/mBlx2v0aZU6WwNxQTeRHlvJPR)
