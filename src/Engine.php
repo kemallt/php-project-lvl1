@@ -25,7 +25,12 @@ function game(string $type, string $name): void
     $gamespace = "\Brain\Games\\" . $camelType . "\\";
     for ($i = 0; $i < 3; $i++) {
         $funcName = $gamespace . "getPars";
-        $pars = $funcName();
+        if (is_callable($funcName)) {
+            $pars = $funcName();
+        } else {
+            line("Unknown game. Let's try again, %s!", $name);
+            return;
+        }
         ['questionString' => $questionString, 'rightAnswer' => $rightAnswer, 'task' => $task] = $pars;
         line($task);
         $answer = prompt("Question: {$questionString}");
