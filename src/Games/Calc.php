@@ -5,7 +5,7 @@ namespace Brain\Games\Calc;
 define("TASKCALC", 'What is the result of the expression?');
 
 function getPars(int $minNumber = 1, int $maxNumber = 100): array
-{    
+{
     $operations = ['+', '-', '*'];
     $number1 = rand($minNumber, $maxNumber);
     $number2 = rand($minNumber, $maxNumber);

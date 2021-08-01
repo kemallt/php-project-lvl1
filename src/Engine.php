@@ -22,7 +22,7 @@ function greetings(): string
 function game(string $type, string $name): void
 {
     $camelType = ucfirst($type);
-    $gamespace = "\Brain\Games\\" . $camelType. "\\";
+    $gamespace = "\Brain\Games\\" . $camelType . "\\";
     for ($i = 0; $i < 3; $i++) {
         $funcName = $gamespace . "getPars";
         $pars = $funcName();

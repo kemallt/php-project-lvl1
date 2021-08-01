@@ -14,11 +14,18 @@ function getPars(int $minNumber = 1, int $maxNumber = 100): array
     $hiddenPosition = rand(0, $numbersCount - 1);
     $rightAnswer = $progression[$hiddenPosition];
     $progression[$hiddenPosition] = '..';
-    return array('questionString' => implode(' ', $progression), 'rightAnswer' => $rightAnswer, 'task' => TASKPROGRESSION);
+    $questionString = implode(' ', $progression);
+    return array('questionString' => $questionString, 'rightAnswer' => $rightAnswer, 'task' => TASKPROGRESSION);
 }
 
-function getProgression(int $minNumber, int $maxNumber, int $minRange = 5, int $maxRange = 15, int $minAdd = 1, int $maxAdd = 10): array
-{
+function getProgression(
+    int $minNumber,
+    int $maxNumber,
+    int $minRange = 5,
+    int $maxRange = 15,
+    int $minAdd = 1,
+    int $maxAdd = 10
+): array {
     $numbersCount = rand($minRange, $maxRange);
     $progressionStart = rand($minNumber, $maxNumber);
     $progressionAdd = rand($minAdd, $maxAdd);
