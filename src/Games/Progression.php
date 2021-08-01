@@ -11,7 +11,7 @@ function getPars(int $minNumber = 1, int $maxNumber = 100): array
     $minAdd = 1;
     $maxAdd = 10;
     $progression = getProgression($minNumber, $maxNumber, $minRange, $maxRange, $minAdd, $maxAdd);
-    $hiddenPosition = rand(0, $numbersCount - 1);
+    $hiddenPosition = rand(0, count($progression) - 1);
     $rightAnswer = $progression[$hiddenPosition];
     $progression[$hiddenPosition] = '..';
     $questionString = implode(' ', $progression);
