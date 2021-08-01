@@ -21,20 +21,11 @@ function greetings(): string
 
 function game(string $type, string $name): void
 {
+    $camelType = ucfirst($type);
+    $gamespace = "\Brain\Games\\" . $camelType. "\\";
     for ($i = 0; $i < 3; $i++) {
-        if ($type === 'even') {
-            $pars = \Brain\Games\Even\getPars();
-        } elseif ($type === 'calc') {
-            $pars = \Brain\Games\Calc\getPars();
-        } elseif ($type === 'gcd') {
-            $pars = \Brain\Games\Gcd\getPars();
-        } elseif ($type === 'progression') {
-            $pars = \Brain\Games\Progression\getPars();
-        } elseif ($type === 'prime') {
-            $pars = \Brain\Games\Prime\getPars();
-        } else {
-            $pars = array('questionString' => '', 'rightAnswer' => '', 'task' => '');
-        }
+        $funcName = $gamespace . "getPars";
+        $pars = $funcName();
         ['questionString' => $questionString, 'rightAnswer' => $rightAnswer, 'task' => $task] = $pars;
         line($task);
         $answer = prompt("Question: {$questionString}");

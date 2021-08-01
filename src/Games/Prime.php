@@ -2,12 +2,13 @@
 
 namespace Brain\Games\Prime;
 
+define("TASKPRIME", 'Answer "yes" if given number is prime. Otherwise answer "no".');
+
 function getPars(int $minNumber = 1, int $maxNumber = 100): array
 {
-    $task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
     $number = rand($minNumber, $maxNumber);
     $rightAnswer = isPrime($number) ? 'yes' : 'no';
-    return array('questionString' => $number, 'rightAnswer' => $rightAnswer, 'task' => $task);
+    return array('questionString' => $number, 'rightAnswer' => $rightAnswer, 'task' => TASKPRIME);
 }
 
 function isPrime(int $number): bool
