@@ -25,6 +25,6 @@ function performOperation(string $operation, int ...$numbers): int
         case '*':
             return $numbers[0] * $numbers[1];
         default:
-            return null;
+            return 0;
     }
 }
