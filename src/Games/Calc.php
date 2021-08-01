@@ -15,7 +15,7 @@ function getPars(int $minNumber = 1, int $maxNumber = 100): array
     return array('questionString' => $questionString, 'rightAnswer' => $rightAnswer, 'task' => TASKCALC);
 }
 
-function performOperation($operation, ...$numbers)
+function performOperation(string $operation, int ...$numbers): int
 {
     switch ($operation) {
         case '+':
