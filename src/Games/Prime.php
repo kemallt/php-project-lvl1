@@ -2,7 +2,7 @@
 
 namespace Brain\Games\Prime;
 
-define("TASKPRIME", 'Answer "yes" if given number is prime. Otherwise answer "no".');
+const TASKPRIME = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 function getPars(int $minNumber = 1, int $maxNumber = 100): array
 {

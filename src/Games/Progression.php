@@ -2,7 +2,7 @@
 
 namespace Brain\Games\Progression;
 
-define("TASKPROGRESSION", 'What number is missing in the progression?');
+const TASKPROGRESSION = 'What number is missing in the progression?';
 
 function getPars(int $minNumber = 1, int $maxNumber = 100): array
 {

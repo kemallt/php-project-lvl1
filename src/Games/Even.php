@@ -2,7 +2,7 @@
 
 namespace Brain\Games\Even;
 
-define("TASKEVEN", 'Answer "yes" if the number is even, otherwise answer "no".');
+const TASKEVEN = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 function getPars(int $minNumber = 1, int $maxNumber = 100): array
 {

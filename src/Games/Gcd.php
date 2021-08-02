@@ -2,7 +2,7 @@
 
 namespace Brain\Games\Gcd;
 
-define("TASKGCD", 'Find the greatest common divisor of given numbers.');
+const TASKGCD = 'Find the greatest common divisor of given numbers.';
 
 function getPars(int $minNumber = 1, int $maxNumber = 100): array
 {

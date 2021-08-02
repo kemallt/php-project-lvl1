@@ -2,7 +2,7 @@
 
 namespace Brain\Games\Calc;
 
-define("TASKCALC", 'What is the result of the expression?');
+const TASKCALC = 'What is the result of the expression?';
 
 function getPars(int $minNumber = 1, int $maxNumber = 100): array
 {
@@ -15,16 +15,16 @@ function getPars(int $minNumber = 1, int $maxNumber = 100): array
     return array('questionString' => $questionString, 'rightAnswer' => $rightAnswer, 'task' => TASKCALC);
 }
 
-function performOperation(string $operation, int ...$numbers): int
+function performOperation(string $operation, int $number1, int $number2): int
 {
     switch ($operation) {
         case '+':
-            return $numbers[0] + $numbers[1];
+            return $number1 + $number2;
         case '-':
-            return $numbers[0] - $numbers[1];
+            return $number1 - $number2;
         case '*':
-            return $numbers[0] * $numbers[1];
+            return $number1 * $number2;
         default:
-            return 0;
+            throw new Exception("Unknown operation");
     }
 }
