@@ -25,6 +25,6 @@ function performOperation(string $operation, int $number1, int $number2): int
         case '*':
             return $number1 * $number2;
         default:
-            throw new Exception("Unknown operation");
+            throw new \Exception("Unknown operation");
     }
 }
