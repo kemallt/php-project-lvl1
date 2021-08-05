@@ -2,7 +2,17 @@
 
 namespace Brain\Games\Progression;
 
+use function Brain\Games\Engine\greetings;
+use function Brain\Games\Engine\game;
+
 const TASKPROGRESSION = 'What number is missing in the progression?';
+
+function start()
+{
+    $name = greetings();
+    $funcName = '\Brain\Games\Progression\getPars';
+    game($funcName, $name);
+}
 
 function getPars(int $minNumber = 1, int $maxNumber = 100): array
 {

@@ -2,7 +2,17 @@
 
 namespace Brain\Games\Calc;
 
+use function Brain\Games\Engine\greetings;
+use function Brain\Games\Engine\game;
+
 const TASKCALC = 'What is the result of the expression?';
+
+function start()
+{
+    $name = greetings();
+    $funcName = '\Brain\Games\Calc\getPars';
+    game($funcName, $name);
+}
 
 function getPars(int $minNumber = 1, int $maxNumber = 100): array
 {

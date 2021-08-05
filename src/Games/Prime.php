@@ -2,7 +2,17 @@
 
 namespace Brain\Games\Prime;
 
+use function Brain\Games\Engine\greetings;
+use function Brain\Games\Engine\game;
+
 const TASKPRIME = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+function start()
+{
+    $name = greetings();
+    $funcName = '\Brain\Games\Prime\getPars';
+    game($funcName, $name);
+}
 
 function getPars(int $minNumber = 1, int $maxNumber = 100): array
 {

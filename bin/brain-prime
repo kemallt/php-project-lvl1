@@ -3,6 +3,6 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use Brain\Games\Engine;
+use Brain\Games\Prime;
 
-Engine\start('prime');
+Prime\start('prime');
