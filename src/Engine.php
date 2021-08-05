@@ -13,15 +13,11 @@ function greetings(): string
     return $name;
 }
 
-function game(string $funcName, string $name): void
+function game(callable $getPars): void
 {
+    $name = greetings();
     for ($i = 0; $i < 3; $i++) {
-        if (is_callable($funcName)) {
-            $pars = $funcName();
-        } else {
-            line("Unknown game. Let's try again, %s!", $name);
-            return;
-        }
+        $pars = $getPars();
         ['questionString' => $questionString, 'rightAnswer' => $rightAnswer, 'task' => $task] = $pars;
         line($task);
         $answer = prompt("Question: {$questionString}");

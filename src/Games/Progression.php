@@ -2,30 +2,25 @@
 
 namespace Brain\Games\Progression;
 
-use function Brain\Games\Engine\greetings;
 use function Brain\Games\Engine\game;
 
 const TASKPROGRESSION = 'What number is missing in the progression?';
 
 function start(): void
 {
-    $name = greetings();
-    $funcName = '\Brain\Games\Progression\getPars';
-    game($funcName, $name);
-}
-
-function getPars(int $minNumber = 1, int $maxNumber = 100): array
-{
-    $minRange = 5;
-    $maxRange = 15;
-    $minAdd = 1;
-    $maxAdd = 10;
-    $progression = getProgression($minNumber, $maxNumber, $minRange, $maxRange, $minAdd, $maxAdd);
-    $hiddenPosition = rand(0, count($progression) - 1);
-    $rightAnswer = $progression[$hiddenPosition];
-    $progression[$hiddenPosition] = '..';
-    $questionString = implode(' ', $progression);
-    return array('questionString' => $questionString, 'rightAnswer' => $rightAnswer, 'task' => TASKPROGRESSION);
+    $getPars = function (int $minNumber = 1, int $maxNumber = 100): array {
+        $minRange = 5;
+        $maxRange = 15;
+        $minAdd = 1;
+        $maxAdd = 10;
+        $progression = getProgression($minNumber, $maxNumber, $minRange, $maxRange, $minAdd, $maxAdd);
+        $hiddenPosition = rand(0, count($progression) - 1);
+        $rightAnswer = $progression[$hiddenPosition];
+        $progression[$hiddenPosition] = '..';
+        $questionString = implode(' ', $progression);
+        return array('questionString' => $questionString, 'rightAnswer' => $rightAnswer, 'task' => TASKPROGRESSION);
+    };
+    game($getPars);
 }
 
 function getProgression(

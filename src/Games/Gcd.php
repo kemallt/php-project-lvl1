@@ -2,26 +2,22 @@
 
 namespace Brain\Games\Gcd;
 
-use function Brain\Games\Engine\greetings;
 use function Brain\Games\Engine\game;
 
 const TASKGCD = 'Find the greatest common divisor of given numbers.';
 
 function start(): void
 {
-    $name = greetings();
-    $funcName = '\Brain\Games\Gcd\getPars';
-    game($funcName, $name);
+    $getPars = function (int $minNumber = 1, int $maxNumber = 100): array {
+        $number1 = rand($minNumber, $maxNumber);
+        $number2 = rand($minNumber, $maxNumber);
+        $questionString = "{$number1} {$number2}";
+        $rightAnswer = getGcd($number1, $number2);
+        return array('questionString' => $questionString, 'rightAnswer' => $rightAnswer, 'task' => TASKGCD);
+    };
+    game($getPars);
 }
 
-function getPars(int $minNumber = 1, int $maxNumber = 100): array
-{
-    $number1 = rand($minNumber, $maxNumber);
-    $number2 = rand($minNumber, $maxNumber);
-    $questionString = "{$number1} {$number2}";
-    $rightAnswer = getGcd($number1, $number2);
-    return array('questionString' => $questionString, 'rightAnswer' => $rightAnswer, 'task' => TASKGCD);
-}
 
 function getGcd(int $number1, int $number2): int
 {
