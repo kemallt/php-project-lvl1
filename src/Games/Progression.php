@@ -7,7 +7,7 @@ use function Brain\Games\Engine\game;
 
 const TASKPROGRESSION = 'What number is missing in the progression?';
 
-function start()
+function start(): void
 {
     $name = greetings();
     $funcName = '\Brain\Games\Progression\getPars';

@@ -7,7 +7,7 @@ use function Brain\Games\Engine\game;
 
 const TASKPRIME = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-function start()
+function start(): void
 {
     $name = greetings();
     $funcName = '\Brain\Games\Prime\getPars';
