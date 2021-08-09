@@ -4,16 +4,16 @@ namespace Brain\Games\Prime;
 
 use function Brain\Games\Engine\game;
 
-const TASKPRIME = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const TASK = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 function start(): void
 {
-    $getPars = function (int $minNumber = 1, int $maxNumber = 100): array {
+    $getGameData = function (int $minNumber = 1, int $maxNumber = 100): array {
         $number = rand($minNumber, $maxNumber);
         $rightAnswer = isPrime($number) ? 'yes' : 'no';
-        return array('questionString' => $number, 'rightAnswer' => $rightAnswer, 'task' => TASKPRIME);
+        return array('question' => $number, 'rightAnswer' => $rightAnswer, 'task' => TASK);
     };
-    game($getPars);
+    game($getGameData);
 }
 
 function isPrime(int $number): bool

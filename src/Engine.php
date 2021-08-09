@@ -5,6 +5,8 @@ namespace Brain\Games\Engine;
 use function cli\line;
 use function cli\prompt;
 
+const ROUNDS = 3;
+
 function greetings(): string
 {
     line('Welcome to the Brain Game!');
@@ -13,14 +15,14 @@ function greetings(): string
     return $name;
 }
 
-function game(callable $getPars): void
+function game(callable $getGameData): void
 {
     $name = greetings();
-    for ($i = 0; $i < 3; $i++) {
-        $pars = $getPars();
-        ['questionString' => $questionString, 'rightAnswer' => $rightAnswer, 'task' => $task] = $pars;
+    for ($i = 0; $i < ROUNDS; $i++) {
+        $gameData = $getGameData();
+        ['question' => $question, 'rightAnswer' => $rightAnswer, 'task' => $task] = $gameData;
         line($task);
-        $answer = prompt("Question: {$questionString}");
+        $answer = prompt("Question: {$question}");
         if ($answer == $rightAnswer) {
             line("Correct!");
         } else {

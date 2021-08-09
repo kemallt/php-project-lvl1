@@ -4,11 +4,11 @@ namespace Brain\Games\Progression;
 
 use function Brain\Games\Engine\game;
 
-const TASKPROGRESSION = 'What number is missing in the progression?';
+const TASK = 'What number is missing in the progression?';
 
 function start(): void
 {
-    $getPars = function (int $minNumber = 1, int $maxNumber = 100): array {
+    $getGameData = function (int $minNumber = 1, int $maxNumber = 100): array {
         $minRange = 5;
         $maxRange = 15;
         $minAdd = 1;
@@ -17,10 +17,10 @@ function start(): void
         $hiddenPosition = rand(0, count($progression) - 1);
         $rightAnswer = $progression[$hiddenPosition];
         $progression[$hiddenPosition] = '..';
-        $questionString = implode(' ', $progression);
-        return array('questionString' => $questionString, 'rightAnswer' => $rightAnswer, 'task' => TASKPROGRESSION);
+        $question = implode(' ', $progression);
+        return array('question' => $question, 'rightAnswer' => $rightAnswer, 'task' => TASK);
     };
-    game($getPars);
+    game($getGameData);
 }
 
 function getProgression(

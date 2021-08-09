@@ -4,14 +4,14 @@ namespace Brain\Games\Even;
 
 use function Brain\Games\Engine\game;
 
-const TASKEVEN = 'Answer "yes" if the number is even, otherwise answer "no".';
+const TASK = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 function start(): void
 {
-    $getPars = function (int $minNumber = 1, int $maxNumber = 100): array {
+    $getGameData = function (int $minNumber = 1, int $maxNumber = 100): array {
         $number = rand($minNumber, $maxNumber);
         $rightAnswer = ($number % 2) === 0 ? 'yes' : 'no';
-        return array('questionString' => $number, 'rightAnswer' => $rightAnswer, 'task' => TASKEVEN);
+        return array('question' => $number, 'rightAnswer' => $rightAnswer, 'task' => TASK);
     };
-    game($getPars);
+    game($getGameData);
 }
