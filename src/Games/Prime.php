@@ -18,6 +18,12 @@ function start(): void
 
 function isPrime(int $number): bool
 {
+    if ($number === 1 || $number === 0) {
+        return true;
+    }
+    if ($number < 0) {
+        return false;
+    }
     for ($i = 2; $i < $number; $i++) {
         if ($number % $i === 0) {
             return false;
