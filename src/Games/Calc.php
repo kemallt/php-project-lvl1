@@ -12,8 +12,8 @@ function start(): void
 {
     $getGameData = function (): array {
         $operations = ['+', '-', '*'];
-        $number1 = rand(MUNNUMBER, MAXNUMBER);
-        $number2 = rand(MUNNUMBER, MAXNUMBER);
+        $number1 = rand(MINNUMBER, MAXNUMBER);
+        $number2 = rand(MINNUMBER, MAXNUMBER);
         $operation = $operations[rand(0, count($operations) - 1)];
         $rightAnswer = performOperation($operation, $number1, $number2);
         $question = "{$number1} {$operation} {$number2}";
