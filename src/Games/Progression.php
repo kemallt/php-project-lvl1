@@ -5,15 +5,20 @@ namespace Brain\Games\Progression;
 use function Brain\Games\Engine\game;
 
 const TASK = 'What number is missing in the progression?';
+const MINNUMBER = 1;
+const MAXNUMBER = 100;
 
 function start(): void
 {
-    $getGameData = function (int $minNumber = 1, int $maxNumber = 100): array {
+    $getGameData = function (): array {
         $minRange = 5;
         $maxRange = 15;
         $minAdd = 1;
         $maxAdd = 10;
-        $progression = getProgression($minNumber, $maxNumber, $minRange, $maxRange, $minAdd, $maxAdd);
+        $progressionStart = rand(MINNUMBER, MAXNUMBER);
+        $progressionAdd = rand($minAdd, $maxAdd);
+        $progressionLength = rand($minRange, $maxRange);
+        $progression = getProgression($progressionStart, $progressionAdd, $progressionLength);
         $hiddenPosition = rand(0, count($progression) - 1);
         $rightAnswer = $progression[$hiddenPosition];
         $progression[$hiddenPosition] = '..';
@@ -24,18 +29,13 @@ function start(): void
 }
 
 function getProgression(
-    int $minNumber,
-    int $maxNumber,
-    int $minRange = 5,
-    int $maxRange = 15,
-    int $minAdd = 1,
-    int $maxAdd = 10
+    int $progressionStart,
+    int $progressionAdd,
+    int $progressionLength
 ): array {
-    $numbersCount = rand($minRange, $maxRange);
-    $progressionStart = rand($minNumber, $maxNumber);
-    $progressionAdd = rand($minAdd, $maxAdd);
+
     $progressionArr = [];
-    for ($i = 0; $i < $numbersCount; $i++) {
+    for ($i = 0; $i < $progressionLength; $i++) {
         $curNumber = $progressionStart + $progressionAdd;
         $progressionArr[] = $curNumber;
         $progressionStart = $curNumber;

@@ -5,13 +5,15 @@ namespace Brain\Games\Calc;
 use function Brain\Games\Engine\game;
 
 const TASK = 'What is the result of the expression?';
+const MINNUMBER = 1;
+const MAXNUMBER = 100;
 
 function start(): void
 {
-    $getGameData = function (int $minNumber = 1, int $maxNumber = 100): array {
+    $getGameData = function (): array {
         $operations = ['+', '-', '*'];
-        $number1 = rand($minNumber, $maxNumber);
-        $number2 = rand($minNumber, $maxNumber);
+        $number1 = rand(MUNNUMBER, MAXNUMBER);
+        $number2 = rand(MUNNUMBER, MAXNUMBER);
         $operation = $operations[rand(0, count($operations) - 1)];
         $rightAnswer = performOperation($operation, $number1, $number2);
         $question = "{$number1} {$operation} {$number2}";
